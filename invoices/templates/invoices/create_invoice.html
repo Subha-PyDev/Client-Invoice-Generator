@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Invoice</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            width: 400px;
+        }
+        input, textarea {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <h2>Create Invoice</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Generate & Email Invoice</button>
+    </form>
+</body>
+</html>
