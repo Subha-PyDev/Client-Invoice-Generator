@@ -18,7 +18,7 @@ def create_invoice(request):
             template_path = 'invoices/pdf_template.html'
             context = {'invoice': invoice}
             response = HttpResponse(content_type='application/pdf')
-            response['Content-Disposition'] = 'inline; filename="invoice.pdf"'  # Or 'attachment' for download
+            response['Content-Disposition'] = 'inline; filename="invoice.pdf"'  
             template = get_template(template_path)
             html = template.render(context)
 
